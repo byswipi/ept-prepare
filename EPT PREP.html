@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EPT PREP</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F5F7;--card:#fff;--ink:#1D1D1F;--mute:#6E6E73;--line:#E5E5EA;--blue:#EDEDF0;--pri:#1D1D1F;--acc:#1D1D1F;--ok:#1E7B3A;--okbg:#E8F5EC;--bad:#C9252D;--badbg:#FCEBEC;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{font-size:92%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Inter,Arial,sans-serif}
+h1,h2,h3{line-height:1.2;margin:0 0 .5rem}h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800}h2{font-size:1.4rem;font-weight:800}h3{font-size:1.05rem;font-weight:600}p{margin:.3rem 0}
+button{font:inherit;cursor:pointer;min-height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:.55rem 1rem;font-weight:600}
+button:focus-visible,input:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+button.p{background:var(--pri);color:#fff;border-color:var(--pri)}button:disabled{opacity:.45;cursor:not-allowed}
+input,select{font:inherit;font-size:16px;min-height:44px;border-radius:10px;border:1.5px solid var(--line);padding:.4rem .7rem;background:var(--card);color:var(--ink);width:100%}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.1rem;box-shadow:none}
+.grid{display:grid;gap:12px}.g2{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.sp{justify-content:space-between}.mute{color:var(--mute);font-size:.9rem}
+.bar{height:10px;background:var(--blue);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--acc);border-radius:9px;transition:width .4s}
+.big{font-size:2.4rem;font-weight:800;line-height:1}.chip{border-radius:99px;padding:.25rem .8rem;min-height:36px;font-size:.88rem}.chip.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.tag{display:inline-block;background:var(--blue);border-radius:8px;padding:.1rem .55rem;font-size:.8rem;font-weight:600}
+.opt{display:flex;gap:10px;width:100%;text-align:left;margin:8px 0;padding:.8rem 1rem;font-weight:500}.opt b{min-width:1.4rem}
+.opt.sel{border-color:var(--acc);background:var(--blue)}.opt.ok{border-color:var(--ok);background:var(--okbg)}.opt.no{border-color:var(--bad);background:var(--badbg)}
+.fb{border-radius:14px;padding:.9rem 1rem;margin-top:10px}.fb.ok{background:var(--okbg);color:var(--ok)}.fb.no{background:var(--badbg);color:var(--bad)}.fb p{color:var(--ink)}
+.nav{position:fixed;left:0;top:0;bottom:0;width:224px;background:var(--card);border-right:1px solid var(--line);padding:1rem;display:none;flex-direction:column;gap:2px;overflow:auto}
+.nav button{border:0;text-align:left;background:none;width:100%}.nav button.on{background:var(--blue)}.logo{font-weight:800;font-size:1.25rem;padding:.4rem .6rem 1rem}.logo span{color:var(--acc)}
+.bot{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+.bot button{flex:1;border:0;border-radius:0;font-size:.78rem;min-height:56px}.bot button.on{color:var(--acc)}
+main{padding:1rem 1rem 96px;max-width:980px;margin:0 auto}
+@media(min-width:860px){.nav{display:flex}.bot{display:none}main{margin-left:224px;padding:1.5rem 2rem 3rem;max-width:none}main>div{max-width:940px;margin:auto}}
+.split{display:grid;gap:12px}@media(min-width:860px){.split.r{grid-template-columns:1.1fr 1fr}}
+.pass{max-height:none;line-height:1.75}@media(min-width:860px){.pass{max-height:70vh;overflow:auto}}mark{background:#FFE58A;color:#222;border-radius:3px}
+.navg{display:flex;flex-wrap:wrap;gap:6px}.navg button{width:44px;padding:0;position:relative}.navg .a{background:var(--blue)}.navg .c{border-color:var(--acc);border-width:3px}.navg .m::after{content:"⚑";position:absolute;top:-4px;right:2px;font-size:.7rem;color:var(--bad)}
+.hero{background:var(--blue);color:var(--ink);border-radius:20px;padding:1.6rem 1.2rem}.hero p{color:var(--mute)}.hero button{background:transparent;color:var(--ink)}.hero button.p{background:var(--pri);color:#fff;border-color:var(--pri)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;color:#000;padding:8px;z-index:20}
+table{width:100%;border-collapse:collapse}td,th{padding:.4rem .3rem;text-align:left;border-bottom:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.stk{position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:4}.act{position:sticky;bottom:0;background:var(--bg);padding:10px 0 calc(10px + env(safe-area-inset-bottom,0px));z-index:4;margin-top:12px}
+.intest .bot{display:none}.intest main{padding-bottom:24px}
+.opt b{display:grid;place-items:center;min-width:1.7rem;height:1.7rem;border-radius:50%;background:var(--blue)}.opt.sel b{background:var(--pri);color:#fff}
+button:active:not(:disabled){transform:scale(.98)}button:hover:not(:disabled){border-color:var(--acc)}.nav button.on{font-weight:800}
+summary{cursor:pointer;font-weight:600;min-height:44px}
+h1,h2,h3,.big{letter-spacing:-.02em}h2{font-weight:700}.big{font-weight:600}
+button{border-radius:999px;border:0;background:var(--blue);padding:.55rem 1.3rem;font-weight:500}button.p{background:var(--pri);color:#fff}
+button:hover:not(:disabled){filter:brightness(.96)}button.p:hover:not(:disabled){filter:none;opacity:.85}
+.card{border:0;border-radius:18px}.opt{border:1.5px solid transparent;background:var(--bg);border-radius:14px}.opt.sel{border-color:var(--ink);background:#fff}
+input,select{border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.nav,.bot{background:rgba(255,255,255,.82);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}
+.nav button{background:none;border-radius:10px;font-weight:500}.nav button.on{background:var(--blue);font-weight:600}.logo span{font-weight:400}
+.bot button{background:none;border-radius:0;color:var(--mute)}.bot button.on{color:var(--ink);font-weight:600}
+.navg button{border-radius:12px;background:var(--bg);padding:0}.navg .a{background:var(--blue)}.navg .c{box-shadow:inset 0 0 0 2px var(--ink)}
+.bar{height:6px}.bar i{background:var(--ink)}.chip{background:var(--blue)}
+.stk,.act{background:var(--bg)}
+button{border-radius:0;border:1.5px solid var(--ink);background:transparent;color:var(--ink)}
+button.p{background:transparent;color:var(--ink);border-width:2.5px;font-weight:700}
+button:hover:not(:disabled){background:var(--blue);filter:none}button.p:hover:not(:disabled){opacity:1}
+.nav button,.bot button{border:0;border-radius:0;background:none}.nav button.on{background:var(--blue)}.nav button:hover:not(:disabled){background:var(--blue)}
+.opt{border:1.5px solid var(--line);border-radius:0;background:transparent}.opt.sel{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink);border-color:var(--ink)}
+.navg button{border-radius:0;background:transparent}.navg .a{background:var(--blue)}.chip{border-radius:0;background:transparent}
+button,button.p{border-width:1pt}
+.nav button,.bot button{border:0}
+.opt{border-width:1pt}.opt.sel{box-shadow:inset 0 0 0 1pt var(--ink)}
+.navg .c{box-shadow:inset 0 0 0 1pt var(--ink)}
+</style></head><body>
+<a class="skip" href="#app">Lewati ke konten</a>
+<nav class="nav" id="side" aria-label="Menu utama"></nav>
+<main id="app" tabindex="-1" aria-live="polite"></main>
+<nav class="bot" id="bot" aria-label="Menu bawah"></nav>
+<script>
+// DATA CONTOH. Semua soal dibuat original, bukan soal resmi EPT/TOEFL.
+const Q=[
+["G","Subject-Verb Agreement","Easy","The list of students ____ on the table.",["are","is","were","have been"],1,"Subjek utama adalah 'list' (tunggal), bukan 'students'."],
+["G","Present Perfect Continuous","Medium","The students ____ preparing for the examination since Monday.",["are","have been","were","had"],1,"'Since Monday' menandai aksi yang mulai di masa lalu dan masih berlangsung."],
+["G","Articles","Easy","She is ____ honest person who always tells the truth.",["a","an","the","no article"],1,"'Honest' diawali bunyi vokal (h tidak dibunyikan), jadi pakai 'an'."],
+["G","Prepositions","Easy","He has been interested ____ astronomy since childhood.",["on","at","in","for"],2,"Kolokasi tetap: interested in."],
+["G","Passive Voice","Medium","The final report ____ by the committee yesterday.",["approved","was approved","has approving","is approve"],1,"Pelaku tidak ditekankan dan waktunya lampau, jadi was + past participle."],
+["G","Conditionals","Medium","If I ____ more time, I would join the exchange program.",["have","had","will have","would have"],1,"Pengandaian tidak nyata di masa kini: If + past simple, would + verb."],
+["G","Parallel Structure","Hard","Her hobbies are reading novels, writing poems, and ____ in the garden.",["to work","works","working","worked"],2,"Item dalam daftar harus sebentuk: reading, writing, working."],
+["G","Comparatives","Easy","This module is ____ than the one we studied last week.",["more difficult","most difficult","difficulter","as difficult"],0,"Kata sifat panjang memakai 'more' + adjective + than."],
+["G","Gerunds & Infinitives","Medium","The lecturer suggested ____ the discussion until next week.",["to postpone","postponing","postpone","to postponing"],1,"'Suggest' diikuti gerund."],
+["G","Clauses","Hard","The book ____ I borrowed from the library is very old.",["who","whose","which","what"],2,"Relative clause untuk benda memakai which atau that."],
+["G","Pronouns","Easy","Neither of the answers ____ correct.",["are","were","is","be"],2,"'Neither' diperlakukan sebagai tunggal."],
+["G","Conjunctions","Medium","He studied hard; ____, he failed the quiz.",["therefore","however","moreover","because"],1,"Hasil berlawanan dengan harapan, jadi 'however'."],
+["V","Academic Vocabulary","Medium","The university will ____ more funds to the library next year.",["allocate","hesitate","imitate","evaluate"],0,"Allocate: membagikan sesuatu untuk tujuan tertentu."],
+["V","Synonyms","Medium","The new policy will mitigate the risk. 'Mitigate' is closest to:",["increase","reduce","ignore","predict"],1,"Mitigate berarti mengurangi dampak atau keparahan."],
+["V","Context Vocabulary","Hard","The team made a substantial improvement. 'Substantial' means:",["tiny","hidden","considerable","sudden"],2,"Substantial: cukup besar atau signifikan."],
+["V","Synonyms","Easy","She was reluctant to speak in public. 'Reluctant' means:",["eager","unwilling","able","proud"],1,"Reluctant: enggan."],
+["R","Main Idea","Medium","What is the main idea of the passage?",["Sleep matters more than studying hours","Students should avoid all exams","Libraries should close at night","Caffeine replaces sleep"],0,"Seluruh paragraf menekankan bahwa tidur memperkuat memori dan hasil belajar.","p1"],
+["R","Detail","Easy","According to the passage, when does the brain consolidate memories?",["During exams","While sleeping","While reading","During breakfast"],1,"Kalimat kedua menyebut konsolidasi terjadi saat tidur.","p1"],
+["R","Vocabulary in Context","Medium","The word 'consolidate' in the passage is closest in meaning to:",["strengthen","erase","question","borrow"],0,"Dalam konteks memori, consolidate berarti memperkuat.","p1"],
+["L","Short Conversations","Medium","What does the woman imply?",["She will attend the lecture","She has not finished the report","She dislikes the professor","She wants to change courses"],1,"'I wish I had another day' menyiratkan laporannya belum selesai.","Man: Are you coming to the lecture tonight? Woman: I wish I could, but I wish I had another day to finish this report."],
+["L","Short Conversations","Easy","Where does the conversation most likely take place?",["In a library","In a cafe","In a laboratory","In a gym"],0,"Petunjuknya: meminjam buku dan jam tutup perpustakaan.","Student: Could I borrow this book for two weeks? Staff: Yes, but please return it before we close on the fifteenth."],
+["L","Talks","Hard","What is the speaker mainly discussing?",["How to write a thesis outline","Why deadlines were extended","Where to find sample surveys","Who can join the workshop"],0,"Pembicara memaparkan langkah menyusun kerangka skripsi.","Today I will explain how to build a clear thesis outline. First, write your research question. Then list three supporting arguments, and finally arrange them logically."]
+];
+const PASS={p1:"Many students believe that staying awake all night is the best way to prepare for an exam. Research suggests the opposite. During sleep, the brain consolidate memories, moving new information from short-term storage into long-term networks. Students who sleep after studying tend to remember more details than those who stay awake. Sleep also improves concentration, which helps during the exam itself. Therefore, a reasonable schedule that protects sleep is often more effective than extra hours of tired revision."};
+const CATS={G:"Structure & Grammar",V:"Vocabulary",R:"Reading",L:"Listening"};
+Q.push(
+["G","Subject-Verb Agreement","Medium","Each of the participants ____ a certificate at the end of the workshop.",["receive","receives","are receiving","have received"],1,"'Each of' diikuti kata kerja tunggal."],
+["G","Tenses","Medium","By the time the lecturer arrived, the students ____ the room.",["left","had left","have left","leave"],1,"Past perfect dipakai untuk aksi yang selesai sebelum aksi lampau lainnya."],
+["G","Tenses","Easy","She ____ to the library every Friday.",["go","goes","is going","gone"],1,"Kebiasaan rutin memakai simple present, subjek 'she' memakai -es."],
+["G","Articles","Medium","____ sun rises in the east.",["A","An","The","No article"],2,"Hanya ada satu matahari, jadi memakai 'the'."],
+["G","Prepositions","Easy","We have lived in this city ____ 2019.",["for","since","from","during"],1,"'Since' dipakai dengan titik waktu awal, 'for' dengan lama waktu."],
+["G","Passive Voice","Hard","The results ____ on the website by tomorrow.",["will post","will be posted","are posting","posted"],1,"Hasil adalah penerima aksi, jadi will be + past participle."],
+["G","Pronouns","Medium","The professor gave Anna and ____ extra reading.",["I","me","myself","mine"],1,"Sebagai objek kata kerja, pakai object pronoun 'me'."],
+["G","Clauses","Medium","Students ____ attendance is low may lose their scholarship.",["who","whom","whose","which"],2,"'Whose' menunjukkan kepemilikan: kehadiran milik siswa."],
+["G","Conjunctions","Easy","____ it was raining, the seminar continued as planned.",["Because","Although","Unless","So"],1,"Hubungan berlawanan: hujan, tetapi seminar tetap jalan."],
+["G","Comparatives","Medium","Of the three essays, this one is the ____.",["good","better","best","most better"],2,"Membandingkan tiga hal atau lebih memakai superlatif: best."],
+["G","Conditionals","Hard","If she had studied harder, she ____ the test.",["would pass","would have passed","will pass","passed"],1,"Pengandaian masa lampau: If + past perfect, would have + past participle."],
+["G","Gerunds & Infinitives","Easy","She decided ____ for a scholarship.",["applying","to apply","apply","applied"],1,"'Decide' diikuti to-infinitive."],
+["G","Error Identification","Easy","Which sentence is correct?",["She don't like coffee.","She doesn't likes coffee.","She doesn't like coffee.","She not like coffee."],2,"Negatif simple present: doesn't + kata kerja dasar."],
+["G","Error Identification","Medium","Which sentence is correct?",["The informations are useful.","The information is useful.","The informations is useful.","The information are useful."],1,"'Information' tidak bisa dihitung dan tidak berbentuk jamak."],
+["G","Error Identification","Hard","Which sentence is correct?",["Not only he studied, but he also worked.","Not only did he study, but he also worked.","Not only he did study, but also worked.","Not only studied he, but worked."],1,"Setelah 'not only' di awal kalimat, subjek dan auxiliary diinversi."],
+["V","Academic Vocabulary","Medium","The study aims to ____ the causes of low motivation.",["investigate","decorate","ignore","dismiss"],0,"Investigate: menyelidiki secara sistematis."],
+["V","Synonyms","Easy","Clean water is scarce in the region. 'Scarce' means:",["rare","plentiful","loud","heavy"],0,"Scarce: langka, jumlahnya sedikit."],
+["V","Context Vocabulary","Hard","Her argument was coherent. 'Coherent' means:",["confusing","logical and clear","very short","emotional"],1,"Coherent: tersusun logis sehingga mudah diikuti."],
+["V","Synonyms","Medium","The committee will assess each application. 'Assess' is closest to:",["evaluate","delay","borrow","repeat"],0,"Assess: menilai."],
+["V","Academic Vocabulary","Medium","Participants gave informed ____ before the experiment.",["consent","content","contest","contact"],0,"Informed consent: persetujuan setelah mendapat penjelasan."],
+["V","Context Vocabulary","Hard","The data were inconclusive. 'Inconclusive' means:",["not leading to a firm result","fully proven","very recent","badly written"],0,"Inconclusive: belum memberi kesimpulan yang pasti."],
+["R","Main Idea","Medium","What is the main idea of the passage?",["Urban gardens are useful but limited","Cities should ban gardens","Farms are disappearing","Soil is always safe"],0,"Teks memuat manfaat sekaligus batas kebun kota.","p2"],
+["R","Detail","Easy","Why do critics doubt that urban gardens can feed a city?",["Residents dislike vegetables","Land is limited and soil may be polluted","Gardens are too expensive","Rooftops are illegal"],1,"Kritik menyebut lahan terbatas dan tanah yang tercemar.","p2"],
+["R","Inference","Hard","What can be inferred about the experts' view?",["Gardens should replace farms","Gardens offer benefits beyond food","Community building is harmful","Pollution is not a concern"],1,"Pakar menyebut nilai terbesar ada pada edukasi dan komunitas.","p2"],
+["L","Short Conversations","Medium","What will the man probably do next?",["Print the form","Call the registrar","Leave for class","Pay the fee"],0,"Ia akan mencetak formulir baru di perpustakaan.","Woman: You need to submit this form before noon. Man: I left my copy at home. Let me print another one at the library right now."],
+["L","Short Conversations","Easy","What problem does the student have?",["He lost his notes","He missed the bus","He forgot his password","He is sick"],2,"Ia tidak bisa masuk portal karena lupa kata sandi.","Student: I can't open the course portal. Staff: Did you type your password correctly? Student: I think I forgot it. Can you reset it?"],
+["L","Long Conversations","Medium","What is the main purpose of the announcement?",["To cancel a class","To announce a room change","To introduce a speaker","To open registration"],1,"Pengumuman memindahkan kelas dari Room 104 ke Room 210.","Attention students in Writing 201. Today's class has moved from Room 104 to Room 210 because of a projector problem. Please proceed to the new room."],
+["L","Talks","Hard","According to the speaker, what should students do first?",["Read the abstract","Choose a journal","Collect data","Check references"],0,"Pembicara menyebut abstrak dibaca lebih dulu.","When reading a research article, begin with the abstract. It tells you the purpose and findings in a few lines. After that, move to the method and the results."]
+);
+PASS.p2="Urban gardens have expanded rapidly in many cities over the past decade. Residents convert empty lots, rooftops, and even balconies into small farms that supply fresh vegetables. Supporters point out that these gardens reduce the distance food travels and create shared spaces where neighbors meet. However, critics argue that urban gardens cannot feed a whole city, since the available land is limited and soil in some areas contains pollutants. Experts therefore suggest that gardens be seen as a complement to, not a replacement for, conventional agriculture. Their greatest value may lie in education and community building rather than in the volume of food they produce.";
+// STATE
+const KEY="eptprep.v1";let S;
+try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+S=S||{onb:null,xp:0,days:[],log:[],vocab:{},review:[],scores:[],last:null,theme:"",goal:30,sess:null};
+S.name=S.name||"Student";S.target=S.target||(S.onb&&S.onb.target)||525;
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s),app=$("#app");let T=null,tick=null;
+const pct=(a,b)=>b?Math.round(a/b*100):0;
+const est=p=>Math.round(310+p/100*367);
+function accOf(c){const l=S.log.filter(x=>Q[x.i][0]==c);return l.length?pct(l.filter(x=>x.ok).length,l.length):null}
+function curScore(){return S.scores.length?S.scores.at(-1)[1]:null}
+// NAV
+const NAV=[["home","Dashboard"],["practice","Latihan"],["sim","Simulasi"]];
+const BOT=[["home","Dashboard","⌂"],["practice","Latihan","✎"],["sim","Simulasi","⏱"]];
+function go(r){clearInterval(tick);location.hash=r}
+function chrome(r){const base=r.split("/")[0];$("#side").innerHTML='<div class="logo">EPT<span>PREP</span></div>'+NAV.map(n=>`<button class="${n[0]==base?"on":""}" onclick="go('${n[0]}')" ${n[0]==base?'aria-current="page"':""}>${n[1]}</button>`).join("");
+$("#bot").innerHTML=BOT.map(n=>`<button class="${n[0]==base?"on":""}" onclick="go('${n[0]}')" aria-label="${n[1]}"><div aria-hidden="true">${n[2]}</div>${n[1]}</button>`).join("")}
+function bar(p){return `<div class="bar" role="progressbar" aria-valuenow="${p}" aria-valuemin="0" aria-valuemax="100"><i style="width:${p}%"></i></div>`}
+// VIEWS
+const V={};
+const QUOTES=["Satu latihan kecil hari ini lebih berguna daripada rencana besar yang belum dimulai.","Salah menjawab saat latihan itu murah. Salah menjawab saat tes itu mahal.","Skor naik karena kebiasaan, bukan karena belajar semalam suntuk.","Kamu tidak perlu sempurna, cukup lebih baik dari kemarin.","Pelajari alasan jawaban yang salah, di situ skormu bersembunyi.","Dua puluh menit yang rutin mengalahkan dua jam yang jarang.","Tenang, satu soal sulit tidak menentukan seluruh tes.","Mulai saja dulu, semangatnya menyusul."];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function editName(){const el=$("#nm");el.outerHTML='<input id="ni" aria-label="Nama" value="'+esc(S.name)+'" maxlength="24" style="max-width:240px" onblur="setName(this.value)" onkeydown="if(event.key===\'Enter\')this.blur()">';$("#ni").focus()}
+function setName(v){v=v.trim();if(v)S.name=v;save();render()}
+V.home=()=>{const cs=curScore(),tg=S.target,n=S.log.length,ok=S.log.filter(x=>x.ok).length;const q=QUOTES[Math.floor(Date.now()/864e5)%QUOTES.length];
+const ac=["G","L","R","V"].map(c=>[c,accOf(c)]).filter(x=>x[1]!=null).sort((a,b)=>a[1]-b[1]);
+const p=cs?Math.min(100,Math.max(0,Math.round((cs-310)/(tg-310)*100))):0;const h=new Date().getHours(),g=h<11?"Selamat pagi":h<15?"Selamat siang":h<18?"Selamat sore":"Selamat malam";
+return `<div class="row sp"><h2 id="nm" style="margin:0">${g}, ${esc(S.name)}</h2><button onclick="editName()">Ubah nama</button></div>
+<div class="card" style="margin:12px 0;background:var(--blue)"><p style="font-size:1.1rem;margin:0">\u201c${q}\u201d</p></div>
+<div class="row" style="margin-bottom:12px"><button class="p" onclick="go('practice')">Mulai latihan</button><button onclick="go('sim')">Simulasi</button></div>
+${S.sess?`<div class="card" style="margin-bottom:12px"><b>Ada sesi yang belum selesai</b><p class="mute">Jawabanmu tersimpan otomatis.</p><button class="p" onclick="resume()">Lanjutkan sesi</button></div>`:""}
+<div class="grid g3"><div class="card"><div class="mute">Skor estimasi</div><div class="big">${cs||"-"}</div>${cs?"":'<p class="mute">Muncul setelah simulasi pertama.</p>'}</div>
+<div class="card"><label class="mute" for="tg">Target skor</label><select id="tg" onchange="S.target=+this.value;save();render()">${[450,475,500,525,550].map(t=>`<option value="${t}" ${t==tg?"selected":""}>${t}+</option>`).join("")}</select></div>
+<div class="card"><div class="mute">Progres ke target</div><div class="big">${p}%</div>${bar(p)}</div></div>
+<h3 style="margin-top:1.2rem">Kemampuan</h3><div class="card">${ac.length?ac.map(a=>`<div class="row sp"><span>${CATS[a[0]]}</span><b>${a[1]}%</b></div>${bar(a[1])}<br>`).join("")+`<p>Paling lemah: <b>${CATS[ac[0][0]]}</b>. Luangkan 20 menit hari ini untuk bagian ini.</p><button class="p" onclick="startPractice('${ac[0][0]}')">Latihan ${CATS[ac[0][0]]}</button>`:`<b>Belum ada data.</b><p class="mute">Kerjakan satu latihan, hasilnya muncul di sini.</p><button class="p" onclick="go('practice')">Mulai latihan</button>`}</div>
+<p class="mute" style="margin-top:12px">${n} soal dikerjakan, akurasi ${n?pct(ok,n):0}%, ${S.days.length} hari belajar.</p>`};
+V.practice=()=>{const grp=[["L","Listening","Short Conversations, Long Conversations, Talks"],["G","Structure & Grammar","Sentence Completion, Error Identification, Grammar Drills"],["R","Reading","Main Idea, Detail, Inference, Vocabulary in Context"],["V","Vocabulary","Academic Vocabulary, Synonyms, Context Vocabulary"]];
+return `<h2>Latihan</h2><div class="grid g2">${grp.map(g=>{const l=S.log.filter(x=>Q[x.i][0]==g[0]),a=accOf(g[0]);return `<div class="card"><h3>${g[1]}</h3><p class="mute">${g[2]}</p><div class="row sp"><span>Soal dikerjakan</span><b>${l.length}</b></div><div class="row sp"><span>Akurasi</span><b>${a==null?"-":a+"%"}</b></div><br><button class="p" onclick="startPractice('${g[0]}')">Mulai latihan</button></div>`}).join("")}</div>`};
+function addXP(n){S.xp+=n;const d=new Date().toDateString();if(!S.days.includes(d))S.days.push(d)}
+// ENGINE
+function pick(cat,topic){let ix=Q.map((q,i)=>i).filter(i=>Q[i][0]==cat&&(!topic||Q[i][1]==topic));if(!ix.length)ix=Q.map((q,i)=>i).filter(i=>Q[i][0]==cat);return ix}
+function startPractice(c,t){S.sess={kind:"prac",ix:pick(c,t),i:0,ans:{},mark:{},shown:{},left:null};save();go("test")}
+function startTest(k){const ix=Q.map((q,i)=>i);S.sess={kind:k,ix,i:0,ans:{},mark:{},shown:{},left:k=="sim"?3600:1800};save();go("test")}
+function resume(){go("test")}
+V.sim=()=>`<h2>Full EPT Simulation</h2><div class="card"><p>Bagian: Listening, Structure & Grammar, Reading. Timer penuh, tanpa penjelasan langsung, navigasi soal, tandai untuk review, simpan otomatis.</p><p class="mute">${Q.length} soal, waktu 60 menit.</p><p><b>This simulation is for practice only and is not an official EPT examination.</b></p><div class="row"><button class="p" onclick="startTest('sim')">Mulai simulasi</button></div></div>`;
+V.test=()=>{const s=S.sess;if(!s)return `<div class="card"><b>Belum ada sesi.</b><p>Mulai dari Latihan atau Simulasi.</p><button class="p" onclick="go('practice')">Ke Latihan</button></div>`;
+const prac=s.kind=="prac",qi=s.ix[s.i],q=Q[qi],ans=s.ans[qi],shown=s.shown[qi];
+const opts=q[4].map((o,k)=>{let c="";if(prac&&shown)c=k==q[5]?"ok":k==ans?"no":"";else if(ans==k)c="sel";return `<button class="opt ${c}" ${shown?"disabled":""} onclick="choose(${k})" aria-pressed="${ans==k}"><b>${"ABCD"[k]}.</b>${o}</button>`}).join("");
+const lis=q[0]=="L"?`<div class="card" style="margin-bottom:10px"><div class="row"><button class="p" onclick="playA()" id="pl">\u25b6 Play</button><button onclick="speechSynthesis&&speechSynthesis.cancel();$('#pt').textContent='00:00 / 00:12'">Replay</button><span id="pt" class="mute">00:00 / 00:12</span></div><p class="mute">Audio placeholder, dibacakan oleh suara perangkat. Bukan audio tes resmi.</p></div>`:"";
+const pass=q[7]&&q[0]=="R"?`<div class="card pass" id="ps"><h3>Passage</h3><p>${PASS[q[7]]}</p><p class="mute">Blok teks lalu tekan Highlight.</p><button onclick="hl()">Highlight</button></div>`:"";
+const nav=s.ix.map((x,k)=>`<button class="${s.ans[x]!=null?"a":""} ${k==s.i?"c":""} ${s.mark[x]?"m":""}" onclick="jump(${k})" aria-label="Soal ${k+1}">${k+1}</button>`).join("");
+const fb=prac&&shown?`<div class="fb ${ans==q[5]?"ok":"no"}"><b>${ans==q[5]?"\u2713 Correct!":"\u2717 Belum tepat. Jawaban: "+"ABCD"[q[5]]}</b><p>Explanation: ${q[6]}</p><p><span class="tag">${q[1]}</span></p></div>`:"";
+const last=s.i==s.ix.length-1;
+return `<div class="row sp stk"><b>QUESTION ${s.i+1} / ${s.ix.length}</b>${s.left!=null?`<b id="tm" role="timer">${fmt(s.left)}</b>`:""}<button onclick="leave()">Keluar</button></div>${bar(pct(s.i+1,s.ix.length))}<br>
+<div class="split ${pass?"r":""}">${pass}<div>${lis}<div class="card"><span class="tag">${CATS[q[0]]}</span> <span class="tag">${q[2]}</span><h3 style="margin-top:.7rem;font-size:1.2rem">${q[3]}</h3>${opts}${prac&&!shown?`<button class="p" ${ans==null?'disabled title="Pilih jawaban dulu"':""} onclick="submitA()">Submit Answer</button>${ans==null?'<span class="mute"> Pilih jawaban dulu (tombol A sampai D juga bisa)</span>':""}`:""}${fb}</div></div></div>
+<div class="row act"><button ${s.i?"":"disabled"} onclick="jump(${s.i-1})">\u2190 Previous</button>${prac?"":`<button onclick="mark()">${s.mark[qi]?"Batalkan tanda":"Mark for review"}</button>`}${last?`<button class="p" ${prac&&!shown?"disabled":""} onclick="${prac?"finish()":"askFin()"}">${prac?"Selesai":"Kumpulkan"}</button>`:`<button class="p" onclick="jump(${s.i+1})">Next Question \u2192</button>`}</div>
+<div id="cf"></div>${prac?"":`<h3 style="margin-top:1rem">Navigator</h3><div class="navg">${nav}</div>`}`};
+const fmt=n=>String(Math.floor(n/60)).padStart(2,"0")+":"+String(n%60).padStart(2,"0");
+function choose(k){const s=S.sess,qi=s.ix[s.i];s.ans[qi]=k;save();render()}
+function submitA(){const s=S.sess;s.shown[s.ix[s.i]]=1;const qi=s.ix[s.i],ok=s.ans[qi]==Q[qi][5];if(ok)addXP(10);else addRev(qi,1);save();render();setTimeout(()=>{const f=document.querySelector(".fb");f&&f.scrollIntoView({block:"nearest",behavior:"smooth"})},60)}
+function addRev(i,q){if(!S.review.includes(i))S.review.push(i);save();if(!q)toast("Soal masuk daftar review")}
+function jump(k){S.sess.i=k;save();render()}
+function mark(){const s=S.sess,qi=s.ix[s.i];s.mark[qi]=!s.mark[qi];save();render()}
+function leave(){go("home")}
+function askFin(){const s=S.sess,un=s.ix.filter(i=>s.ans[i]==null).length,mk=s.ix.filter(i=>s.mark[i]).length;$("#cf").innerHTML=`<div class="card" style="margin-top:12px;border-color:var(--bad)" role="alertdialog"><b>Kumpulkan sekarang?</b><p>${un} soal belum dijawab, ${mk} ditandai. Setelah dikumpulkan, jawaban tidak bisa diubah.</p><div class="row"><button class="p" onclick="finish()">Ya, kumpulkan</button><button onclick="$('#cf').innerHTML=''">Kembali mengerjakan</button></div></div>`;$("#cf").scrollIntoView({block:"center"})}
+function finish(){const s=S.sess;const by={};s.ix.forEach(i=>{const c=Q[i][0],ok=s.ans[i]==Q[i][5];(by[c]=by[c]||[0,0])[1]++;if(ok)by[c][0]++;if(s.ans[i]!=null||s.kind!="prac"){if(s.kind!="prac"||s.shown[i]){S.log.push({i,ok,a:s.ans[i]});if(!ok&&!S.review.includes(i))S.review.push(i)}}});
+const bd={};Object.keys(by).forEach(c=>bd[c]=pct(by[c][0],by[c][1]));
+if(s.kind!="prac"){const all=pct(s.ix.filter(i=>s.ans[i]==Q[i][5]).length,s.ix.length);const sc=est(all);S.scores.push([new Date().toLocaleDateString("id-ID",{day:"numeric",month:"short"}),sc]);S.last={bd,sc,ix:s.ix.slice(),ans:s.ans};addXP(50)}else S.last=null;
+S.sess=null;save();go(s.kind=="prac"?"practice":"result")}
+V.result=()=>{const r=S.last;if(!r)return `<div class="card"><b>Belum ada hasil.</b><p>Kerjakan diagnostic atau simulasi dulu.</p><button class="p" onclick="go('sim')">Ke Simulasi</button></div>`;const tg=S.target,g=tg-r.sc;const e=Object.entries(r.bd).sort((a,b)=>b[1]-a[1]);
+return `<h2>Your Practice Result</h2><div class="grid g3"><div class="card"><div class="mute">Estimated Score</div><div class="big">${r.sc}</div></div><div class="card"><div class="mute">Target</div><div class="big">${tg}</div></div></div><p><b>${g>0?g+" points away from your target.":"Kamu sudah melewati targetmu."}</b></p>
+<div class="card">${e.map(x=>`<div class="row sp"><span>${CATS[x[0]]}</span><b>${x[1]}%</b></div>${bar(x[1])}<br>`).join("")}</div>
+<div class="grid g2" style="margin-top:12px"><div class="card"><div class="mute">Your strongest skill</div><b>${CATS[e[0][0]]}</b></div><div class="card"><div class="mute">Needs improvement</div><b>${CATS[e.at(-1)[0]]}</b></div></div>
+<div class="card" style="margin-top:12px"><b>RECOMMENDATION</b><p>Fokus pada ${CATS[e.at(-1)[0]].toLowerCase()} selama 3 sesi belajar sebelum simulasi berikutnya.</p><div class="row"><button class="p" onclick="startPractice('${e.at(-1)[0]}')">Latihan ${CATS[e.at(-1)[0]]}</button><button onclick="go('home')">Ke Dashboard</button></div></div><h3 style="margin-top:1rem">Jawaban yang perlu dicek</h3>${r.ix.filter(i=>r.ans[i]!=Q[i][5]).map(i=>`<details class="card" style="margin-bottom:8px"><summary>${Q[i][3]}</summary><p style="color:var(--bad)">Jawabanmu: ${r.ans[i]!=null?Q[i][4][r.ans[i]]:"Tidak dijawab"}</p><p style="color:var(--ok)">Benar: ${Q[i][4][Q[i][5]]}</p><p>${Q[i][6]}</p></details>`).join("")||"<p>Semua benar.</p>"}<p class="mute">Estimasi skor dihitung sederhana dari persentase benar pada soal contoh. Bukan skor EPT resmi.</p>`};
+// helpers
+function hl(){const sel=getSelection();if(!sel.rangeCount||sel.isCollapsed||!$("#ps").contains(sel.anchorNode))return toast("Blok dulu teks yang mau di-highlight");try{const m=document.createElement("mark");sel.getRangeAt(0).surroundContents(m);sel.removeAllRanges()}catch(e){toast("Pilih teks dalam satu paragraf")}}
+function playA(){const s=S.sess,q=Q[s.ix[s.i]];$("#pl").textContent="\u23f8 Playing";let t=0;const el=$("#pt");const iv=setInterval(()=>{t++;if(el)el.textContent="00:"+String(t).padStart(2,"0")+" / 00:12";if(t>=12){clearInterval(iv);$("#pl")&&($("#pl").textContent="\u25b6 Play")}},1000);try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(q[7]);u.lang="en-US";speechSynthesis.speak(u)}catch(e){}}
+function toast(m){const d=document.createElement("div");d.textContent=m;d.setAttribute("role","status");d.style.cssText="position:fixed;left:50%;transform:translateX(-50%);bottom:80px;background:#1D1D1F;color:#fff;padding:.6rem 1rem;border-radius:12px;z-index:30";document.body.append(d);setTimeout(()=>d.remove(),2200)}
+function render(){const r=(location.hash||"#home").slice(1)||"home";const [n,arg]=r.split("/");chrome(r);document.body.classList.toggle("intest",r.split("/")[0]=="test");clearInterval(tick);
+if(n=="test"&&S.sess&&S.sess.left!=null){tick=setInterval(()=>{S.sess.left--;const t=$("#tm");if(t){t.textContent=fmt(S.sess.left);t.style.color=S.sess.left<300?"var(--bad)":""}if(S.sess.left%10==0)save();if(S.sess.left<=0){clearInterval(tick);finish()}},1000)}
+app.innerHTML=(V[n]||V.home)(arg);if(n!="test")scrollTo(0,0)}
+addEventListener("hashchange",render);
+document.addEventListener("keydown",e=>{if(location.hash!="#test"||!S.sess||/INPUT|SELECT/.test(e.target.tagName))return;const k="abcd".indexOf(e.key.toLowerCase());if(k>=0&&!S.sess.shown[S.sess.ix[S.sess.i]])choose(k)});
+addEventListener("beforeunload",e=>{if(S.sess&&S.sess.kind!="prac"){save()}});
+render();
+</script></body></html>
